@@ -22,12 +22,14 @@ CREATE TABLE IF NOT EXISTS `tbl_lang` (
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tbl_python`;
 CREATE TABLE IF NOT EXISTS `tbl_python` (
-          `id` int(10) NOT NULL AUTO_INCREMENT,
+          `id` int(10) NOT NULL AUTO_INCREMENT,            
           `py_lang_id` int NOT NULL,
           `diff_level` varchar(10) NOT NULL,
-          `question` varchar(255) NOT NULL,
+          `question` text NOT NULL,
+          `answer` text NOT NULL,
+          INDEX parent_index (py_lang_id),
           PRIMARY KEY (`id`),
-          CONSTRAINT fk_python FOREIGN KEY (py_lang_id) REFERENCES parent(lang_id)
+          CONSTRAINT fk_python FOREIGN KEY (py_lang_id) REFERENCES tbl_lang(id)
           ON DELETE CASCADE
           ON UPDATE CASCADE
         ) ENGINE=InnoDB AUTO_INCREMENT=1 default charset utf8 COLLATE = utf8_general_ci;
@@ -41,9 +43,11 @@ CREATE TABLE IF NOT EXISTS `tbl_java` (
           `id` int(10) NOT NULL AUTO_INCREMENT,
           `java_lang_id` int NOT NULL,
           `diff_level` varchar(10) NOT NULL,
-          `question` varchar(255) NOT NULL,
+          `question` text NOT NULL,
+          `answer` text NOT NULL,
+          INDEX parent_index (java_lang_id),
           PRIMARY KEY (`id`),
-          CONSTRAINT fk_java FOREIGN KEY (java_lang_id) REFERENCES parent(lang_id)
+          CONSTRAINT fk_java FOREIGN KEY (java_lang_id) REFERENCES tbl_lang(id)
           ON DELETE CASCADE
           ON UPDATE CASCADE
         ) ENGINE=InnoDB AUTO_INCREMENT=1 default charset utf8 COLLATE = utf8_general_ci;
@@ -57,9 +61,48 @@ CREATE TABLE IF NOT EXISTS `tbl_javascript` (
           `id` int(10) NOT NULL AUTO_INCREMENT,
           `js_lang_id` int NOT NULL,
           `diff_level` varchar(10) NOT NULL,
-          `question` varchar(255) NOT NULL,
+          `question` text NOT NULL,
+          `answer` text NOT NULL,
+          INDEX parent_index (js_lang_id),
           PRIMARY KEY (`id`),
-        CONSTRAINT fk_js FOREIGN KEY (js_lang_id) REFERENCES parent(lang_id)
+        CONSTRAINT fk_js FOREIGN KEY (js_lang_id) REFERENCES tbl_lang(id)
+          ON DELETE CASCADE
+          ON UPDATE CASCADE
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 default charset utf8 COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
+-- Table `tbl_go`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `tbl_go`;
+CREATE TABLE IF NOT EXISTS `tbl_go` (
+          `id` int(10) NOT NULL AUTO_INCREMENT,
+          `go_lang_id` int NOT NULL,
+          `diff_level` varchar(10) NOT NULL,
+          `question` text NOT NULL,
+          `answer` text NOT NULL,
+          INDEX parent_index (go_lang_id),
+          PRIMARY KEY (`id`),
+        CONSTRAINT fk_go FOREIGN KEY (go_lang_id) REFERENCES tbl_lang(id)
+          ON DELETE CASCADE
+          ON UPDATE CASCADE
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 default charset utf8 COLLATE = utf8_general_ci;
+
+
+
+-- -----------------------------------------------------
+-- Table `tbl_rust`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `tbl_rust`;
+CREATE TABLE IF NOT EXISTS `tbl_rust` (
+          `id` int(10) NOT NULL AUTO_INCREMENT,
+          `rust_lang_id` int NOT NULL,
+          `diff_level` varchar(10) NOT NULL,
+          `question` text NOT NULL,
+          `answer` text NOT NULL,
+          INDEX parent_index (rust_lang_id),
+          PRIMARY KEY (`id`),
+        CONSTRAINT fk_rust FOREIGN KEY (rust_lang_id) REFERENCES tbl_lang(id)
           ON DELETE CASCADE
           ON UPDATE CASCADE
         ) ENGINE=InnoDB AUTO_INCREMENT=1 default charset utf8 COLLATE = utf8_general_ci;
