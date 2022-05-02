@@ -1,1 +1,1 @@
-MariaDB
+MariaDB: mysql -u YOUR_USERNAME -p < interview.sql
