@@ -4,3 +4,5 @@ ID;LANGUAGE;DIFF_LEVEL;QUESTION;ANSWER
 3;JS;1;How do we store values ?;Via a Variable
 4;Go;1;How do we store values ?;Via a Variable
 5;Rust;1;How do we store values ?;Via a Variable
+6;Python;2;WHo is the primary developer on Python?;Guido van Rossum
+7;Python;2;What is the Data Type structure used in Python ? static or dynamic;Dynamic typing
