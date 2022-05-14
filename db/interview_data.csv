@@ -4,5 +4,8 @@ ID;LANGUAGE;DIFF_LEVEL;QUESTION;ANSWER
 3;JS;1;How do we store values ?;Via a Variable
 4;Go;1;How do we store values ?;Via a Variable
 5;Rust;1;How do we store values ?;Via a Variable
-6;Python;2;WHo is the primary developer on Python?;Guido van Rossum
+6;Python;2;Who is the primary developer on Python?;Guido van Rossum
 7;Python;2;What is the Data Type structure used in Python ? static or dynamic;Dynamic typing
+8;Python;2;Name one of the mutable data types in Python ?;list
+9;Python;2;Name one of the loops where it doesnt require counting?; for loop
+10;Python;2;Name one of the loops where it required counting?; while loop
