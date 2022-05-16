@@ -13,21 +13,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.description}>
-          Simple React Interview Questions
-        </h1>
+        <h5 className={styles.text}>
+            Hello, we will be discussing our Goals and Types of Languages we planned on creating for this Job interview question Application.
+        </h5>
 
         <div className={styles.grid}>
-          <Link href="/interview">
-            <a className={styles.card}>Interview</a>
-          </Link>
 
-          <Link href="/about">
-            <a className={styles.card}>About us</a>
-          </Link>
         </div>
-
       </main>
+
 
       <footer className={styles.footer}>
         <a
