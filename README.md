@@ -9,7 +9,12 @@ Collection of Questions for job interview in various programming languages
 * Read-only so we don't have to deal with authentication, lol
 * Serve up Q&As in a super simple API
   * Paginated option (How many in a page, default value + query param?)
-  * One Q&A, random
+  * GET `/questions`
+    * `?items`: (*default: 1*) number of items to get
+    * `?tag`: (*default: ''*) one or more tags to filter by, comma delimited. If empty, Q&As are chosen randomly from all tags
+    * `?random`: (*default: true*) randomize the order of the Q&As
+* Endpoint to config front end
+  * GET `/config` tags and difficulties
 * Needs to be able to run outside of Docker (JR can't run Docker on his computer)
   * Try to avoid needing to install and run local services
 * Q&A:
